@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <!-- <script type="module" src="dist/app.js"></script> -->
+    <script type="module" src="dist/app.js"></script>
+    <title>真実か挑戦かゲーム</title>
+  </head>
+  <body>
+    <template id="name-entry-section__template">
+      <div>
+        <div class="name-entry-section__bubble">
+          <div class="name-entry-section__bubble__body"></div>
+          <div class="name-entry-section__bubble__arrow"></div>
+          <div class="name-entry-section__bubble__arrow--shadow"></div>
+          <p class="name-entry-section__bubble__text"></p>
+        </div>
+        <div class="name-entry-section__name-entry-event__content">
+          <input
+            type="text"
+            id="enter-first-player-name-event"
+            class="name-entry-section__name-entry-event"
+            maxlength="5"
+          />
+          <input
+            type="text"
+            id="enter-second-player-name-event"
+            class="name-entry-section__name-entry-event"
+            maxlength="5"
+          />
+        </div>
+        <button
+          id="enter-player-name-and-decide-event"
+          class="name-entry-section__enter-player-name-and-decide-event"
+        ></button>
+      </div>
+    </template>
+    <template id="playing-card-game-section__template">
+      <div>
+        <div class="playing-card-game-section__bubble">
+          <div class="playing-card-game-section__bubble__body"></div>
+          <div class="playing-card-game-section__bubble__arrow"></div>
+          <div class="playing-card-game-section__bubble__arrow__shadow"></div>
+          <p class="playing-card-game-section__bubble__text"></p>
+          <div class="playing-card-game-section__event-content">
+            <p class="playing-card-game-section__event-content__text"></p>
+            <div class="playing-card-game-section__event-button-content">
+              <button
+                id="playing-card-game-section__decided-card-event"
+                type="button"
+              ></button>
+              <button
+                id="playing-card-game-section__clear-card-of-select-type-event"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <ul class="playing-card-game-section__card-list"></ul>
+      </div>
+    </template>
+    <template id="opening-message-label__template">
+      <div>
+        <p class="opening-message-label-text--first"></p>
+        <p class="opening-message-label-text--second"></p>
+      </div>
+    </template>
+    <template id="playing-card-game-section__card__template">
+      <li class="card">
+        <p class="name__front-side"></p>
+        <p class="name__back-side"></p>
+        <div class="check"></div>
+        <p class="num"></p>
+      </li>
+    </template>
+    <div id="app" class="container"></div>
+  </body>
+</html>
