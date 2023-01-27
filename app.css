@@ -448,7 +448,7 @@ body {
   pointer-events: none;
 }
 
-.card.--decided .name__front-side{
+.card.--decided .name__front-side {
   font-weight: bold;
   color: orange;
   position: absolute;
@@ -457,7 +457,7 @@ body {
   text-align: center;
 }
 
-.card.--decided .name__back-side{
+.card.--decided .name__back-side {
   font-weight: bold;
   color: #808080;
   position: absolute;
@@ -633,69 +633,69 @@ body {
 }
 
 .card.--turn {
-  animation: card--turn .5s forwards;
+  animation: card--turn 0.5s forwards;
 }
 
 .card.--turn .name__front-side {
-  animation: card--turn__name__front-side .5s forwards;
+  animation: card--turn__name__front-side 0.5s forwards;
 }
 
 .card.--turn .name__back-side {
-  animation: card--turn__name__back-side .5s forwards;
+  animation: card--turn__name__back-side 0.5s forwards;
 }
 
 .card.--turn .check {
-  animation: card--turn__check .25s forwards;
+  animation: card--turn__check 0.25s forwards;
 }
 
 .card.--turn .num {
-  animation: card--turn__num .5s forwards;
+  animation: card--turn__num 0.5s forwards;
 }
 
 @keyframes card--turn {
   from {
-      transform: rotateY(0);
+    transform: rotateY(0);
   }
   to {
-      transform: rotateY(180deg);
-      background: #fff;
-      box-shadow: -5px 5px 5px 0px rgba(0, 0, 0, .3);
+    transform: rotateY(180deg);
+    background: #fff;
+    box-shadow: -5px 5px 5px 0px rgba(0, 0, 0, 0.3);
   }
 }
 
 @keyframes card--turn__name__front-side {
   from {
-      opacity: 1;
+    opacity: 1;
   }
   to {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
 @keyframes card--turn__name__back-side {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes card--turn__check {
   from {
-      transform: translate(-50%, -50%) rotateY(0) rotateZ(40deg);
+    transform: translate(-50%, -50%) rotateY(0) rotateZ(40deg);
   }
   to {
-      transform: translate(-50%, -50%) rotateY(90deg) rotateZ(40deg);
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(40deg);
   }
 }
 
 @keyframes card--turn__num {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -778,8 +778,7 @@ body {
   }
 }
 
-
-
+/*-- --*/
 
 #truth-or-callenge-app {
   background: rgba(255, 255, 255, 0);
@@ -795,7 +794,7 @@ body {
     background: rgba(255, 255, 255, 0);
   }
   to {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -808,36 +807,70 @@ body {
 
 .choice-truth-or-callenge-section__message {
   text-align: center;
+  font-weight: 700;
+}
+
+.choice-truth-or-callenge-section__message--text2 {
+  margin-top: 8px;
 }
 
 .choice-truth-or-callenge-section__message--text1.--hide,
 .choice-truth-or-callenge-section__message--text2.--hide {
   opacity: 0;
+  transform: translateY(-10px);
+}
+
+.choice-truth-or-callenge-section__message--text1.--fade-in,
+.choice-truth-or-callenge-section__message--text2.--fade-in {
+  animation: fade-in-up 1s forwards;
 }
 
 .choice-truth-or-callenge-section__event-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 8px;
 }
 
 .choice-truth-or-callenge-section__event-container.--hide {
   opacity: 0;
+  transform: translateY(10px);
+}
+
+.choice-truth-or-callenge-section__event-container.--fade-in {
+  animation: fade-in-up 1s forwards;
 }
 
 #truth-event {
-  width: 100px;
+  width: 120px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 20px;
   border: none;
-  border-radius: 4px;
   background: rgb(233, 99, 248);
-  padding: 2px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 #challenge-event {
-  width: 100px;
+  width: 120px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 20px;
   border: none;
-  border-radius: 4px;
   background: rgb(28, 236, 236);
-  padding: 2px;
   cursor: pointer;
+  font-weight: 700;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

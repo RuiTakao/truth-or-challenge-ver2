@@ -1,3 +1,5 @@
+import { TruthEvent } from "./event/TruthEvent.js";
+import { ChallengeEvent } from "./event/ChallengeEvent.js";
 export class ChoiceTruthOrChallenge {
     constructor() {
         this.hostElement = document.getElementById("truth-or-callenge-app");
@@ -10,6 +12,7 @@ export class ChoiceTruthOrChallenge {
         this.eventContainer = this.element.querySelector(".choice-truth-or-callenge-section__event-container");
         this.attach();
         this.init();
+        this.animation();
     }
     attach() {
         this.hostElement.insertAdjacentElement("beforeend", this.element);
@@ -18,6 +21,40 @@ export class ChoiceTruthOrChallenge {
         this.text1.classList.add('--hide');
         this.text2.classList.add('--hide');
         this.eventContainer.classList.add('--hide');
+    }
+    animation() {
+        setTimeout(() => {
+            this.text1.classList.add('--fade-in');
+            setTimeout(() => {
+                this.text1.classList.remove('--hide');
+            }, 100);
+            setTimeout(() => {
+                this.text1.classList.remove('--fade-in');
+            }, 750);
+        }, 100);
+        setTimeout(() => {
+            this.text2.classList.add('--fade-in');
+            setTimeout(() => {
+                this.text2.classList.remove('--hide');
+            }, 100);
+            setTimeout(() => {
+                this.text2.classList.remove('--fade-in');
+            }, 750);
+        }, 850);
+        setTimeout(() => {
+            this.eventContainer.classList.add('--fade-in');
+            setTimeout(() => {
+                this.eventContainer.classList.remove('--hide');
+            }, 100);
+            setTimeout(() => {
+                this.eventContainer.classList.remove('--fade-in');
+            }, 750);
+            this.event();
+        }, 1600);
+    }
+    event() {
+        new TruthEvent();
+        new ChallengeEvent();
     }
 }
 //# sourceMappingURL=ChoiceTruthOrChallengeSection.js.map
