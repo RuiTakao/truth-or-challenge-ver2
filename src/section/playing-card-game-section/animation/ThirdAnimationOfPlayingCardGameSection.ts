@@ -1,7 +1,7 @@
 import { playingCardGameSectionUserStatus } from "../../../status/user.js";
 import { message } from "../../../util/text-list.js";
 import { ClosePlayingCardGameSection } from "../closePlayingCardGameSection.js";
-import { ChoiceTruthOrChallengeSection } from "../../choice-truth-or-challenge-section/ChoiceTruthOrChallengeSection.js";
+import { TruthOrChallenge } from "../../truth-or-challenge/TruthOrChallenge.js";
 
 export class ThirdAnimationOfPlayingCardGameSection {
   sectionElement: HTMLDivElement;
@@ -45,10 +45,9 @@ export class ThirdAnimationOfPlayingCardGameSection {
   animation() {
     this.cardAnimation();
     setTimeout(() => {
-      this.sectionElement.removeChild(this.bubble);
       new ClosePlayingCardGameSection();
-      new ChoiceTruthOrChallengeSection();
-    }, 1000);
+      new TruthOrChallenge();
+    }, 1500);
   }
 
   private bubbleInit() {
