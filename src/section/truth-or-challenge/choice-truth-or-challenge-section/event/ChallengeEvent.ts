@@ -1,8 +1,18 @@
+import { OrderChallengeContent } from "../../order-challenge-content-section/OrderChallengeContent.js";
+
 export class ChallengeEvent {
+  hostElement: HTMLDivElement;
+  element: HTMLDivElement;
   button: HTMLButtonElement;
   constructor() {
+    this.hostElement = document.getElementById(
+      "truth-or-callenge-app"
+    )! as HTMLDivElement;
+    this.element = document.getElementById(
+      "choice-truth-or-challenge"
+    )! as HTMLDivElement;
     this.button = document.getElementById(
-      "challenge-event"
+      "choice-challenge-event"
     )! as HTMLButtonElement;
 
     this.configure();
@@ -13,6 +23,11 @@ export class ChallengeEvent {
   }
 
   eventHandler() {
-    console.log("challenge event");
+    this.destroyElement();
+    new OrderChallengeContent();
+  }
+
+  destroyElement() {
+    this.hostElement.removeChild(this.element);
   }
 }

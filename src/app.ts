@@ -4,9 +4,9 @@ import { TruthOrChallenge } from "./section/truth-or-challenge/TruthOrChallenge.
 
 class App {
   constructor() {
-    // new NameEntrySection();
+    new NameEntrySection();
     // new PlayingCardGameSection();
-    new TruthOrChallenge();
+    // new TruthOrChallenge();
   }
 }
 

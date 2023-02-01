@@ -82,14 +82,60 @@
     <template id="choice-truth-or-callenge-template">
       <div>
         <div class="choice-truth-or-callenge-section__message">
-          <p class="choice-truth-or-callenge-section__message--text1">たかおさん</p>
-          <p class="choice-truth-or-callenge-section__message--text2">"真実"か"挑戦"を選んでください。</p>
+          <p class="choice-truth-or-callenge-section__message--text1">
+            たかおさん
+          </p>
+          <p class="choice-truth-or-callenge-section__message--text2">
+            "真実"か"挑戦"を選んでください。
+          </p>
         </div>
         <div class="choice-truth-or-callenge-section__event-container">
-          <button id="truth-event">真実</button>
-          <button id="challenge-event">挑戦</button>
+          <button id="choice-truth-event">真実</button>
+          <button id="choice-challenge-event">挑戦</button>
         </div>
       </div>
+    </template>
+    <template id="order-truth-content-template">
+      <div>
+        <div class="order-truth-content-first">
+          <div class="order-truth-content-first__message">
+            <p class="order-truth-content-first__message--text1">
+              "真実"が選ばれました
+            </p>
+            <p class="order-truth-content-first__message--text2">ゆいさん</p>
+            <p class="order-truth-content-first__message--text3">
+              たかおさんに指示する"真実"を選んでください
+            </p>
+          </div>
+          <div class="order-truth-content__select-event-container">
+            <div class="order-truth-content__select-list">
+              <p class="order-truth-content__select-list-title">真実</p>
+              <select
+                class="order-truth-content__select-list-input"
+                name="truth"
+                id="truth-list"
+                size="3"
+              ></select>
+            </div>
+          </div>
+          <button id="decide-truth-event">この真実を指示する</button>
+        </div>
+        <div class="order-truth-content-second" style="display: none">
+          <div class="order-truth-content-second__message">
+            <p class="order-truth-content-second__message--text1">たかおさん</p>
+            <p class="order-truth-content-second__message--text2">
+              ゆいさんからの指示です。
+            </p>
+            <p class="order-truth-content-second__message--text3">
+              ○○についての"真実"をお願いします
+            </p>
+          </div>
+          <button id="close-order-truth-event">真実を実行しました</button>
+        </div>
+      </div>
+    </template>
+    <template id="order-challenge-content-template">
+      <div></div>
     </template>
     <div id="app" class="container"></div>
   </body>

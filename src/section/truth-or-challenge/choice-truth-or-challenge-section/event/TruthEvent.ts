@@ -1,7 +1,17 @@
+import { OrderTruthContent } from "../../order-truth-content-section/OrderTruthContent.js";
+
 export class TruthEvent {
+  hostElement: HTMLDivElement;
+  element: HTMLDivElement;
   button: HTMLButtonElement;
   constructor() {
-    this.button = document.getElementById("truth-event")! as HTMLButtonElement;
+    this.hostElement = document.getElementById(
+      "truth-or-callenge-app"
+    )! as HTMLDivElement;
+    this.element = document.getElementById(
+      "choice-truth-or-challenge"
+    )! as HTMLDivElement;
+    this.button = document.getElementById("choice-truth-event")! as HTMLButtonElement;
 
     this.configure();
   }
@@ -11,6 +21,11 @@ export class TruthEvent {
   }
 
   eventHandler() {
-    console.log('truth event');
+    this.destroyElement();
+    new OrderTruthContent();
+  }
+
+  destroyElement() {
+    this.hostElement.removeChild(this.element);
   }
 }

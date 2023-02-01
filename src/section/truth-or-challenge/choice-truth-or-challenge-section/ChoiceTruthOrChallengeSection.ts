@@ -43,6 +43,7 @@ export class ChoiceTruthOrChallenge {
 
   init() {
     this.text1.classList.add('--hide');
+    this.text1.innerText = choiceTruthOrChallengeSectionUserStatus.loser.name;
     this.text2.classList.add('--hide');
     this.eventContainer.classList.add('--hide');
   }

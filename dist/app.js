@@ -1,7 +1,7 @@
-import { TruthOrChallenge } from "./section/truth-or-challenge/TruthOrChallenge.js";
+import { NameEntrySection } from "./section/name-entry-section/nameEntrySection.js";
 class App {
     constructor() {
-        new TruthOrChallenge();
+        new NameEntrySection();
     }
 }
 new App();

@@ -840,7 +840,7 @@ body {
   animation: fade-in-up 1s forwards;
 }
 
-#truth-event {
+#choice-truth-event {
   width: 120px;
   height: 56px;
   line-height: 56px;
@@ -852,7 +852,7 @@ body {
   font-weight: 700;
 }
 
-#challenge-event {
+#choice-challenge-event {
   width: 120px;
   height: 56px;
   line-height: 56px;
@@ -874,3 +874,54 @@ body {
     transform: translateY(0px);
   }
 }
+
+/* */
+#order-truth-content {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.order-truth-content-first__message {
+  text-align: center;
+  font-weight: bold;
+}
+
+.order-truth-content__select-list {
+  background: #eaeaea;
+  width: 100%;
+  padding: 4px;
+  margin-top: 16px;
+}
+
+.order-truth-content__select-list-title {
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.order-truth-content__select-list-input {
+  border: none;
+  width: 100%;
+}
+
+#decide-truth-event {
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  margin-top: 16px;
+  background: rgb(233, 99, 248);
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* */
+#order-challenge-content {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
