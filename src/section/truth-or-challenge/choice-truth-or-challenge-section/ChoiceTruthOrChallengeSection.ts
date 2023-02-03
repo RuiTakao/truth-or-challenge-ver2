@@ -1,6 +1,6 @@
-import { choiceTruthOrChallengeSectionUserStatus } from "../../../status/user.js";
-import { TruthEvent } from "./event/TruthEvent.js";
-import { ChallengeEvent } from "./event/ChallengeEvent.js";
+import { choiceTruthOrChallengeSectionUserStatus } from "../../../status/user";
+import { TruthEvent } from "./event/TruthEvent";
+import { ChallengeEvent } from "./event/ChallengeEvent";
 
 export class ChoiceTruthOrChallenge {
   hostElement: HTMLDivElement;

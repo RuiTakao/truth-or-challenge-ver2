@@ -1,6 +1,6 @@
-import { choiceTruthOrChallengeSectionUserStatus } from "../../../../status/user.js";
-import { truthList } from "../../../../status/trutOrChallenge.js";
-import { DecideTruthEvent } from "../event/DecideTruthEvent.js";
+import { choiceTruthOrChallengeSectionUserStatus } from "../../../../status/user";
+import { truthList } from "../../../../status/trutOrChallenge";
+import { DecideTruthEvent } from "../event/DecideTruthEvent";
 
 export class FirstAnimationOfOerderTruthContentSection {
   select: HTMLSelectElement;

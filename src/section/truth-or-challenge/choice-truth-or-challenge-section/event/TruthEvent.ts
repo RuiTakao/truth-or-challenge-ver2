@@ -1,4 +1,4 @@
-import { OrderTruthContent } from "../../order-truth-content-section/OrderTruthContent.js";
+import { OrderTruthContent } from "../../order-truth-content-section/OrderTruthContent";
 
 export class TruthEvent {
   hostElement: HTMLDivElement;

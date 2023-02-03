@@ -1,6 +1,6 @@
-import { message, button } from "../../../util/text-list.js";
-import { EnterSecondPlayerNameEvent } from "../event/EnterSecondPlayerNameEvent.js";
-import { AnimationOfNameEntrySection } from "./AnimationOfNameEntrySection.js";
+import { message, button } from "../../../util/text-list";
+import { EnterSecondPlayerNameEvent } from "../event/EnterSecondPlayerNameEvent";
+import { AnimationOfNameEntrySection } from "./AnimationOfNameEntrySection";
 
 export class SecondAnimationOfNameEntrySection extends AnimationOfNameEntrySection {
     constructor() {

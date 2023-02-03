@@ -1,5 +1,5 @@
-import { AnimationOfNameEntrySection } from "./AnimationOfNameEntrySection.js";
-import { CloseNameEntrySection } from "../closeNameEntrySection.js";
+import { AnimationOfNameEntrySection } from "./AnimationOfNameEntrySection";
+import { CloseNameEntrySection } from "../closeNameEntrySection";
 
 export class ThirdAnimationOfNameEntrySection extends AnimationOfNameEntrySection {
   constructor() {

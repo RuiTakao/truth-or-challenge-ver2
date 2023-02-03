@@ -1,7 +1,7 @@
 import {
   playingCardGameSectionUserStatus,
   choiceTruthOrChallengeSectionUserStatus,
-} from "../../status/user.js";
+} from "../../status/user";
 
 export class ClosePlayingCardGameSection {
   firstUserDecidedCard: string;

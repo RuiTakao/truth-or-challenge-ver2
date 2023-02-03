@@ -1,9 +1,9 @@
 import {
   nameEntrySectionUserStatus,
   playingCardGameSectionUserStatus,
-} from "../../../status/user.js";
-import { SecondAnimationOfNameEntrySection } from "../animation/SecondAnimationOfNameEntrySection.js";
-import { ThirdAnimationOfNameEntrySection } from "../animation/ThirdAnimationOfNameEntrySection.js";
+} from "../../../status/user";
+import { SecondAnimationOfNameEntrySection } from "../animation/SecondAnimationOfNameEntrySection";
+import { ThirdAnimationOfNameEntrySection } from "../animation/ThirdAnimationOfNameEntrySection";
 
 export class EnterPlayerNameAndDecideEvent {
   enterFirstInput: HTMLInputElement;

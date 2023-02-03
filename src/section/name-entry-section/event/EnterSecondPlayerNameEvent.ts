@@ -1,4 +1,4 @@
-import { EnterPlayerNameEvent } from "./EnterPlayerName.js";
+import { EnterPlayerNameEvent } from "./EnterPlayerName";
 
 export class EnterSecondPlayerNameEvent extends EnterPlayerNameEvent{
   constructor() {

@@ -1,4 +1,4 @@
-import { message } from "../../../../util/text-list.js";
+import { message } from "../../../../util/text-list";
 
 export class OpeningMessageLabel {
   hostElement: HTMLDivElement;

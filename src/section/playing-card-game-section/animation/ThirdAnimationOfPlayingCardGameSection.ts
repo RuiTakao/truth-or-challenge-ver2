@@ -1,7 +1,7 @@
-import { playingCardGameSectionUserStatus } from "../../../status/user.js";
-import { message } from "../../../util/text-list.js";
-import { ClosePlayingCardGameSection } from "../closePlayingCardGameSection.js";
-import { TruthOrChallenge } from "../../truth-or-challenge/TruthOrChallenge.js";
+import { playingCardGameSectionUserStatus } from "../../../status/user";
+import { message } from "../../../util/text-list";
+import { ClosePlayingCardGameSection } from "../closePlayingCardGameSection";
+import { TruthOrChallenge } from "../../truth-or-challenge/TruthOrChallenge";
 
 export class ThirdAnimationOfPlayingCardGameSection {
   sectionElement: HTMLDivElement;

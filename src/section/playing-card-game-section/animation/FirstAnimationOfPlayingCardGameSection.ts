@@ -1,9 +1,9 @@
-import { playingCardGameSectionUserStatus } from "../../../status/user.js";
-import { message, button } from "../../../util/text-list.js";
-import { SelectCardEvent } from "../event/selectCardEvent.js";
-import { DecideCardEvent } from "../event/decideCardEvent.js";
-import { OpeningMessageLabel } from "./label/OpeningMessageLabel.js";
-import { ClearCardOfSelectTypeEvent } from "../event/clearCardOfSelectTypeEvent.js";
+import { playingCardGameSectionUserStatus } from "../../../status/user";
+import { message, button } from "../../../util/text-list";
+import { SelectCardEvent } from "../event/selectCardEvent";
+import { DecideCardEvent } from "../event/decideCardEvent";
+import { OpeningMessageLabel } from "./label/OpeningMessageLabel";
+import { ClearCardOfSelectTypeEvent } from "../event/clearCardOfSelectTypeEvent";
 
 export class FirstAnimationOfPlayingCardGameSection {
   username: string;

@@ -1,0 +1,26 @@
+{
+  "name": "truth-or-dare-typescript2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuiTakao/truth-or-challenge-ver2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuiTakao/truth-or-challenge-ver2/issues"
+  },
+  "homepage": "https://github.com/RuiTakao/truth-or-challenge-ver2#readme",
+  "devDependencies": {
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

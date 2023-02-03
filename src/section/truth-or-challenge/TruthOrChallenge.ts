@@ -1,4 +1,4 @@
-import { ChoiceTruthOrChallenge } from "./choice-truth-or-challenge-section/ChoiceTruthOrChallengeSection.js";
+import { ChoiceTruthOrChallenge } from "./choice-truth-or-challenge-section/ChoiceTruthOrChallengeSection";
 
 export class TruthOrChallenge {
   hostElement: HTMLDivElement;

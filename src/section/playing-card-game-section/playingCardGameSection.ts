@@ -1,5 +1,5 @@
-import { FirstAnimationOfPlayingCardGameSection } from "./animation/FirstAnimationOfPlayingCardGameSection.js";
-import { ShuffleUsers } from "../../status/ShuffleUsers.js";
+import { FirstAnimationOfPlayingCardGameSection } from "./animation/FirstAnimationOfPlayingCardGameSection";
+import { ShuffleUsers } from "../../status/ShuffleUsers";
 
 
 export class PlayingCardGameSection {

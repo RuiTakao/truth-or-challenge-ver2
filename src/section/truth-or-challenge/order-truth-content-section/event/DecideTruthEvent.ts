@@ -1,5 +1,5 @@
-import { selectOrder } from "../../../../status/trutOrChallenge.js";
-import { SecondAnimationOfOerderTruthContentSection } from "../animation/SecondAnimationOfOrderTruthContentSection.js";
+import { selectOrder } from "../../../../status/trutOrChallenge";
+import { SecondAnimationOfOerderTruthContentSection } from "../animation/SecondAnimationOfOrderTruthContentSection";
 
 export class DecideTruthEvent {
   hostElement: HTMLDivElement;

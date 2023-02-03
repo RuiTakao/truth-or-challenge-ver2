@@ -1,5 +1,5 @@
-import { choiceTruthOrChallengeSectionUserStatus } from "../../../../status/user.js";
-import { selectOrder } from "../../../../status/trutOrChallenge.js";
+import { choiceTruthOrChallengeSectionUserStatus } from "../../../../status/user";
+import { selectOrder } from "../../../../status/trutOrChallenge";
 
 export class SecondAnimationOfOerderTruthContentSection {
   hostElement: HTMLDivElement;

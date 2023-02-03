@@ -1,4 +1,4 @@
-import { FirstAnimationOfOerderTruthContentSection } from "./animation/FirstAnimationOfOerderTruthContentSection.js";
+import { FirstAnimationOfOerderTruthContentSection } from "./animation/FirstAnimationOfOerderTruthContentSection";
 
 export class OrderTruthContent {
   hostElement: HTMLDivElement;

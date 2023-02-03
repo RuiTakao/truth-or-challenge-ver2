@@ -1,4 +1,4 @@
-import { OrderChallengeContent } from "../../order-challenge-content-section/OrderChallengeContent.js";
+import { OrderChallengeContent } from "../../order-challenge-content-section/OrderChallengeContent";
 
 export class ChallengeEvent {
   hostElement: HTMLDivElement;

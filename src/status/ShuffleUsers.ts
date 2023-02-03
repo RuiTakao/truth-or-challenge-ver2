@@ -2,7 +2,7 @@ import {
   User,
   nameEntrySectionUserStatus,
   playingCardGameSectionUserStatus,
-} from "./user.js";
+} from "./user";
 
 export class ShuffleUsers {
   constructor() {

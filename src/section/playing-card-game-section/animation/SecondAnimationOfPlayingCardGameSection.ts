@@ -1,6 +1,6 @@
-import { playingCardGameSectionUserStatus } from "../../../status/user.js";
-import { message} from "../../../util/text-list.js";
-import { OpeningMessageLabel } from "./label/OpeningMessageLabel.js";
+import { playingCardGameSectionUserStatus } from "../../../status/user";
+import { message} from "../../../util/text-list";
+import { OpeningMessageLabel } from "./label/OpeningMessageLabel";
 
 export class SecondAnimationOfPlayingCardGameSection {
   username: string;

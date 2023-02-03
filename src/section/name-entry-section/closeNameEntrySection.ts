@@ -1,4 +1,4 @@
-import { PlayingCardGameSection } from "../playing-card-game-section/playingCardGameSection.js";
+import { PlayingCardGameSection } from "../playing-card-game-section/playingCardGameSection";
 
 export class CloseNameEntrySection {
   hostElement: HTMLDivElement;

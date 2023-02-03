@@ -1,4 +1,4 @@
-import { FirstAnimationOfNameEntrySection } from "./animation/FirstAnimationOfNameEntrySection.js";
+import { FirstAnimationOfNameEntrySection } from "./animation/FirstAnimationOfNameEntrySection";
 
 export class NameEntrySection {
   hostElement: HTMLDivElement;

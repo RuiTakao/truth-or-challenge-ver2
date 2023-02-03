@@ -1,6 +1,6 @@
-import { playingCardGameSectionUserStatus } from "../../../status/user.js";
-import { SecondAnimationOfPlayingCardGameSection } from "../animation/SecondAnimationOfPlayingCardGameSection.js";
-import { ThirdAnimationOfPlayingCardGameSection } from "../animation/ThirdAnimationOfPlayingCardGameSection.js";
+import { playingCardGameSectionUserStatus } from "../../../status/user";
+import { SecondAnimationOfPlayingCardGameSection } from "../animation/SecondAnimationOfPlayingCardGameSection";
+import { ThirdAnimationOfPlayingCardGameSection } from "../animation/ThirdAnimationOfPlayingCardGameSection";
 
 export class DecideCardEvent {
   hostElement: HTMLDivElement;
