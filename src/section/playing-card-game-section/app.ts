@@ -2,7 +2,8 @@ import { Card } from "./Card";
 import { Label } from "./Label";
 import { Bubble } from "./Bubble";
 import { AddSelectClassEvent } from "./event/selectCardEvent";
-import { RmoveSelectClassEvent } from "./event/RemoveSelectClassEvent";
+import { RemoveSelectClassEvent } from "./event/RemoveSelectClassEvent";
+import { DecideCardEvent } from "./event/decideCardEvent";
 
 export class App {
   card: Card;
@@ -22,7 +23,8 @@ export class App {
         this.bubble.hide();
         this.bubble.fadeIn();
         new AddSelectClassEvent(this.bubble, this.card);
-        new RmoveSelectClassEvent(this.bubble, this.card);
+        new RemoveSelectClassEvent(this.bubble, this.card);
+        new DecideCardEvent(this.card, this.bubble);
     }, 6000);
   }
 }

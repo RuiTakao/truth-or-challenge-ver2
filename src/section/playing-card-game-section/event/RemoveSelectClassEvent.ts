@@ -1,7 +1,7 @@
 import { Card } from "../Card";
 import { Bubble } from "../Bubble";
 
-export class RmoveSelectClassEvent {
+export class RemoveSelectClassEvent {
   constructor(bubble: Bubble, card: Card) {
     this.configure(bubble, card);
   }

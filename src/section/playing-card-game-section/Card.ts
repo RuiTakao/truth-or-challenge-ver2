@@ -10,6 +10,10 @@ export class Card {
    return this.cardList;
   }
 
+  get getElement() {
+    return this.element;
+  }
+
   constructor() {
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
     this.templateElement = document.getElementById(

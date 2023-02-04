@@ -48,7 +48,7 @@ export class FirstAnimationOfPlayingCardGameSection {
     this.init();
     this.animation();
     // new SelectCardEvent();
-    new DecideCardEvent();
+    // new DecideCardEvent();
     new ClearCardOfSelectTypeEvent();
   }
 

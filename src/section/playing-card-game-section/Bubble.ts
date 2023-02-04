@@ -1,5 +1,6 @@
 import { message, button } from "../../util/text-list";
 import { Card } from "./Card";
+import { DecideCardEvent } from "./event/decideCardEvent";
 
 export class Bubble {
   hostElement: HTMLDivElement;
@@ -13,6 +14,10 @@ export class Bubble {
 
   get getRemoveSelectClassButton() {
     return this.clearCardOfSelectTypeEvent;
+  }
+
+  get getDecideCardButton() {
+    return this.decideCardEvent;
   }
 
   constructor() {
@@ -89,5 +94,11 @@ export class Bubble {
     setTimeout(() => {
       this.element.classList.remove("--leftRotate");
     }, 200);
+  }
+
+  destroy() {
+    console.log(this.hostElement)
+    console.log(this.element)
+    this.hostElement.removeChild(this.element);
   }
 }
