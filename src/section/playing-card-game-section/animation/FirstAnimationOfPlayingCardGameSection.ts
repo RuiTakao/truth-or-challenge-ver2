@@ -1,6 +1,6 @@
 import { playingCardGameSectionUserStatus } from "../../../status/user";
 import { message, button } from "../../../util/text-list";
-import { SelectCardEvent } from "../event/selectCardEvent";
+// import { SelectCardEvent } from "../event/selectCardEvent";
 import { DecideCardEvent } from "../event/decideCardEvent";
 import { OpeningMessageLabel } from "./label/OpeningMessageLabel";
 import { ClearCardOfSelectTypeEvent } from "../event/clearCardOfSelectTypeEvent";
@@ -47,7 +47,7 @@ export class FirstAnimationOfPlayingCardGameSection {
 
     this.init();
     this.animation();
-    new SelectCardEvent();
+    // new SelectCardEvent();
     new DecideCardEvent();
     new ClearCardOfSelectTypeEvent();
   }
