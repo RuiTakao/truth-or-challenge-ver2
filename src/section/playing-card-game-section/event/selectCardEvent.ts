@@ -1,7 +1,7 @@
 import { Card } from "../Card";
 import { Bubble } from "../Bubble";
 
-export class CardSelectEvent {
+export class AddSelectClassEvent {
   constructor(bubble: Bubble, card: Card) {
     this.configure(bubble, card);
     console.log(card)
@@ -9,9 +9,9 @@ export class CardSelectEvent {
   }
 
   configure(bubble: Bubble, card: Card) {
-    card.card.forEach((value) => {
+    card.getCardList.forEach((value) => {
       value.addEventListener("click", () => {
-        bubble.cardClickHandler();
+        bubble.openEventButton();
         card.removeSelectClass();
         card.addSelectClass(value);
       });

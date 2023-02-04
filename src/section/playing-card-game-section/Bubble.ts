@@ -10,6 +10,11 @@ export class Bubble {
   eventContentText: HTMLParagraphElement;
   decideCardEvent: HTMLButtonElement;
   clearCardOfSelectTypeEvent: HTMLButtonElement;
+
+  get getRemoveSelectClassButton() {
+    return this.clearCardOfSelectTypeEvent;
+  }
+
   constructor() {
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
     this.templateElement = document.getElementById(
@@ -59,10 +64,18 @@ export class Bubble {
     }, 100);
   }
 
-  cardClickHandler() {
+  openEventButton() {
     if (this.eventContent.style.display == "none") {
       this.text.style.display = "none";
       this.eventContent.style.display = "block";
+    }
+    this.vibe();
+  }
+
+  closeEventButton() {
+    if (this.text.style.display == "none") {
+      this.eventContent.style.display = "none";
+      this.text.style.display = "block";
     }
     this.vibe();
   }

@@ -4,14 +4,10 @@ export class Card {
   hostElement: HTMLDivElement;
   templateElement: HTMLTemplateElement;
   element: HTMLDivElement;
-  card: NodeListOf<HTMLLIElement>;
+  cardList: NodeListOf<HTMLLIElement>;
 
-  get targetCard() {
-    let target;
-    this.card.forEach(value => {
-        target = value;
-    });
-    return target;
+  get getCardList() {
+   return this.cardList;
   }
 
   constructor() {
@@ -25,7 +21,7 @@ export class Card {
     );
     this.element = importedNode.firstElementChild as HTMLDivElement;
 
-    this.card = this.element.querySelectorAll(
+    this.cardList = this.element.querySelectorAll(
       ".card"
     )! as NodeListOf<HTMLLIElement>;
   }
@@ -35,7 +31,7 @@ export class Card {
   }
 
   slideInRight() {
-    this.card.forEach((value) => {
+    this.cardList.forEach((value) => {
       value.classList.add("--moving");
       setTimeout(() => {
         value.classList.remove("--hide");
@@ -48,21 +44,21 @@ export class Card {
   }
 
   hide() {
-    this.card.forEach((value) => {
+    this.cardList.forEach((value) => {
       value.classList.add("--hide");
     });
   }
 
   lock() {
-    this.card.forEach((value) => {
+    this.cardList.forEach((value) => {
       value.classList.add("--lock");
     });
   }
 
   click(bubble: Bubble) {
-    this.card.forEach((value) => {
+    this.cardList.forEach((value) => {
       value.addEventListener("click", () => {
-        bubble.cardClickHandler();
+        bubble.openEventButton();
         this.removeSelectClass();
         this.addSelectClass(value);
       });
@@ -74,7 +70,7 @@ export class Card {
   }
 
   removeSelectClass() {
-    this.card.forEach((value) => {
+    this.cardList.forEach((value) => {
       if (value.classList.contains("--selected")) {
         value.classList.remove("--selected");
       }
