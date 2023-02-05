@@ -20,11 +20,11 @@ export const playingCardGameSectionUserStatus: {
   secondUser: User;
 } = {
   firstUser: {
-    name: "",
+    name: "takao",
     decideCard: "",
   },
   secondUser: {
-    name: "",
+    name: "kennya",
     decideCard: "",
   },
 };

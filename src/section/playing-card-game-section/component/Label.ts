@@ -1,4 +1,4 @@
-import { message } from "../../util/text-list";
+import { message } from "../../../util/text-list";
 
 export class Label {
   hostElement: HTMLDivElement;

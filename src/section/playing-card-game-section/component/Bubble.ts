@@ -1,6 +1,6 @@
-import { message, button } from "../../util/text-list";
+import { message, button } from "../../../util/text-list";
 import { Card } from "./Card";
-import { DecideCardEvent } from "./event/decideCardEvent";
+// import { DecideCardEvent } from "../event/DecideCardEvent";
 
 export class Bubble {
   hostElement: HTMLDivElement;
@@ -30,28 +30,26 @@ export class Bubble {
       true
     );
     this.element = importedNode.firstElementChild as HTMLDivElement;
+
     this.text = this.element.querySelector(
       ".playing-card-game-section__bubble__text"
     )! as HTMLParagraphElement;
-    this.text.innerText = message.playingCardGameSectionMessage;
     this.eventContent = this.element.querySelector(
       ".playing-card-game-section__event-content"
     )! as HTMLDivElement;
-    this.eventContent.style.display = "none";
     this.eventContentText = this.eventContent.querySelector(
       ".playing-card-game-section__event-content__text"
     )! as HTMLParagraphElement;
-    this.eventContentText.innerText =
-      message.playingCardGameSectionButtonMessage;
     this.decideCardEvent = this.eventContent.querySelector(
       "#playing-card-game-section__decided-card-event"
     )! as HTMLButtonElement;
-    this.decideCardEvent.innerText = button.decideCardEventButtonText;
     this.clearCardOfSelectTypeEvent = this.eventContent.querySelector(
       "#playing-card-game-section__clear-card-of-select-type-event"
     )! as HTMLButtonElement;
-    this.clearCardOfSelectTypeEvent.innerText =
-      button.clearCardOfSelectTypeEventButtonText;
+
+    this.setTextEventContent();
+    this.hide();
+    this.attach();
   }
 
   attach() {
@@ -60,29 +58,46 @@ export class Bubble {
 
   hide() {
     this.element.classList.add("--hide");
+    this.eventContent.style.display = "none";
+    this.element.style.display = "none";
+    this.text.style.display = "block";
   }
 
-  fadeIn() {
-    this.element.classList.add("--fadeIn");
+  lock() {
+    
+  }
+
+  setTextEventContent() {
+    this.eventContentText.innerText =
+      message.playingCardGameSectionButtonMessage;
+    this.decideCardEvent.innerText = button.decideCardEventButtonText;
+    this.clearCardOfSelectTypeEvent.innerText =
+      button.clearCardOfSelectTypeEventButtonText;
+  }
+
+  setText(userName: string) {
+    this.text.innerText = userName + message.playingCardGameSectionMessage;
+  }
+
+  fadeIn(userName: string) {
+    this.setText(userName);
+    this.element.style.display = "block";
+    setTimeout(() => {
+      this.element.classList.add("--fadeIn");
+    }, 100);
     setTimeout(() => {
       this.element.classList.remove("--hide");
-    }, 100);
+    }, 200);
   }
 
   openEventButton() {
-    if (this.eventContent.style.display == "none") {
-      this.text.style.display = "none";
-      this.eventContent.style.display = "block";
-    }
-    this.vibe();
+    this.text.style.display = "none";
+    this.eventContent.style.display = "block";
   }
 
   closeEventButton() {
-    if (this.text.style.display == "none") {
-      this.eventContent.style.display = "none";
-      this.text.style.display = "block";
-    }
-    this.vibe();
+    this.eventContent.style.display = "none";
+    this.text.style.display = "block";
   }
 
   vibe() {
@@ -97,8 +112,6 @@ export class Bubble {
   }
 
   destroy() {
-    console.log(this.hostElement)
-    console.log(this.element)
     this.hostElement.removeChild(this.element);
   }
 }

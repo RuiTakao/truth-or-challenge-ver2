@@ -1,7 +1,6 @@
 import { NameEntrySection } from "./section/name-entry-section/nameEntrySection";
-import { PlayingCardGameSection } from "./section/playing-card-game-section/playingCardGameSection";
 import { TruthOrChallenge } from "./section/truth-or-challenge/TruthOrChallenge";
-import { App as card } from "./section/playing-card-game-section/app";
+import { App as PlayingCardGameSection } from "./section/playing-card-game-section/App";
 
 class App {
   constructor() {
@@ -9,7 +8,7 @@ class App {
     // new PlayingCardGameSection();
     // new TruthOrChallenge();
 
-    new card();
+    new PlayingCardGameSection();
   }
 }
 
