@@ -1,0 +1,25 @@
+.playing-card-game-section__bubble {
+  &.--hide {
+    opacity: 0;
+  }
+  &.--fadeIn {
+    animation: playing-card-game-section__bubble--slideIn 2s forwards;
+  }
+
+  &.--rightRotate {
+    transform: rotate(-2deg);
+  }
+
+  &.--leftRotate {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes playing-card-game-section__bubble--slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

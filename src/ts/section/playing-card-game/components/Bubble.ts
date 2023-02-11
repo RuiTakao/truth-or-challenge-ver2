@@ -1,6 +1,4 @@
 import { message, button } from "../../../util/text-list";
-import { Card } from "./Card";
-// import { DecideCardEvent } from "../event/DecideCardEvent";
 
 export class Bubble {
   hostElement: HTMLDivElement;
@@ -12,15 +10,15 @@ export class Bubble {
   decideCardEvent: HTMLButtonElement;
   clearCardOfSelectTypeEvent: HTMLButtonElement;
 
-  get getRemoveSelectClassButton() {
+  get noButtonElement() {
     return this.clearCardOfSelectTypeEvent;
   }
 
-  get getDecideCardButton() {
+  get yesButtonElement() {
     return this.decideCardEvent;
   }
 
-  constructor() {
+  constructor(userName: string) {
     this.hostElement = document.getElementById("app")! as HTMLDivElement;
     this.templateElement = document.getElementById(
       "playing-card-game-section__bubble__template"
@@ -47,9 +45,11 @@ export class Bubble {
       "#playing-card-game-section__clear-card-of-select-type-event"
     )! as HTMLButtonElement;
 
-    this.setTextEventContent();
+    this.setText(userName);
+    this.init();
     this.hide();
     this.attach();
+    this.fadeIn();
   }
 
   attach() {
@@ -58,16 +58,15 @@ export class Bubble {
 
   hide() {
     this.element.classList.add("--hide");
+  }
+
+  init() {
     this.eventContent.style.display = "none";
-    this.element.style.display = "none";
     this.text.style.display = "block";
   }
 
-  lock() {
-    
-  }
-
-  setTextEventContent() {
+  setText(userName: string) {
+    this.text.innerText = userName + message.playingCardGameSectionMessage;
     this.eventContentText.innerText =
       message.playingCardGameSectionButtonMessage;
     this.decideCardEvent.innerText = button.decideCardEventButtonText;
@@ -75,29 +74,34 @@ export class Bubble {
       button.clearCardOfSelectTypeEventButtonText;
   }
 
-  setText(userName: string) {
-    this.text.innerText = userName + message.playingCardGameSectionMessage;
-  }
-
-  fadeIn(userName: string) {
-    this.setText(userName);
-    this.element.style.display = "block";
-    setTimeout(() => {
-      this.element.classList.add("--fadeIn");
-    }, 100);
-    setTimeout(() => {
-      this.element.classList.remove("--hide");
-    }, 200);
+  fadeIn() {
+    this.element.classList.add("--fadeIn");
+    this.element.classList.remove("--hide");
   }
 
   openEventButton() {
-    this.text.style.display = "none";
-    this.eventContent.style.display = "block";
+    if (
+      this.hostElement.querySelectorAll(".playing-card-game-section__bubble")
+        .length > 0
+    ) {
+      if (this.text.style.display === "block") {
+        this.text.style.display = "none";
+      }
+      if (this.eventContent.style.display === "none") {
+        this.eventContent.style.display = "block";
+      }
+      this.vibe();
+    }
   }
 
   closeEventButton() {
-    this.eventContent.style.display = "none";
-    this.text.style.display = "block";
+    if (this.text.style.display === "none") {
+      this.text.style.display = "block";
+    }
+    if (this.eventContent.style.display === "block") {
+      this.eventContent.style.display = "none";
+    }
+    this.vibe();
   }
 
   vibe() {

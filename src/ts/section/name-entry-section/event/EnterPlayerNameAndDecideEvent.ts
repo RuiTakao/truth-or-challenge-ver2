@@ -1,6 +1,6 @@
 import {
   nameEntrySectionUserStatus,
-  playingCardGameSectionUserStatus,
+  // playingCardGameSectionUserStatus,
 } from "../../../status/user";
 import { SecondAnimationOfNameEntrySection } from "../animation/SecondAnimationOfNameEntrySection";
 import { ThirdAnimationOfNameEntrySection } from "../animation/ThirdAnimationOfNameEntrySection";
@@ -41,14 +41,14 @@ export class EnterPlayerNameAndDecideEvent {
     nameEntrySectionUserStatus.firstUser.name = this.enterFirstInput.value;
     new SecondAnimationOfNameEntrySection();
     console.log(nameEntrySectionUserStatus);
-    console.log(playingCardGameSectionUserStatus);
+    // console.log(playingCardGameSectionUserStatus);
   }
 
   private setSecondUser() {
     nameEntrySectionUserStatus.secondUser.name = this.enterSecondInput.value;
     new ThirdAnimationOfNameEntrySection();
     console.log(nameEntrySectionUserStatus);
-    console.log(playingCardGameSectionUserStatus);
+    // console.log(playingCardGameSectionUserStatus);
   }
 
   private setFirstUserValidation(): boolean {

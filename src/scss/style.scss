@@ -1,0 +1,400 @@
+@charset 'utf-8';
+
+// ==========================================================================
+// Foundation
+// ==========================================================================
+
+@import "foundation/base";
+
+/*********************************
+        name-entry-section
+    *********************************/
+
+/******** 吹き出し全体のデザイン **********/
+.name-entry-section__bubble {
+  position: relative;
+  height: 136px;
+  width: 300px;
+  margin: 30% auto 0;
+}
+
+/******** 吹き出し楕円のデザイン **********/
+.name-entry-section__bubble__body {
+  position: absolute;
+  height: 100px;
+  width: 300px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+/******** 吹き出し矢印のデザイン **********/
+.name-entry-section__bubble__arrow {
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-left: 25px solid #fff;
+  border-bottom: 40px solid transparent;
+  top: 66px;
+  left: 75%;
+  transform: rotate(6deg);
+  z-index: 4;
+}
+
+/******** 吹き出し矢印の影のデザイン **********/
+.name-entry-section__bubble__arrow--shadow {
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-left: 25px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 40px solid transparent;
+  top: 71px;
+  left: 228px;
+  filter: blur(3px);
+  transform: rotate(6deg);
+  z-index: 1;
+}
+
+/******** 吹き出しテキストのデザイン **********/
+.name-entry-section__bubble__text {
+  position: absolute;
+  text-align: center;
+  color: rgb(187, 130, 130);
+  font-weight: bold;
+  width: 100%;
+  z-index: 4;
+}
+
+/******** 入力フォームコンテンツのデザイン **********/
+.name-entry-section__name-entry-event__content {
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+
+/******** 入力フォームのデザイン **********/
+.name-entry-section__name-entry-event {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 340px;
+  height: 56px;
+  font-size: 24px;
+  border: 2px solid rgb(185, 246, 246);
+  border-radius: 8px;
+  padding-left: 4px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+/******** ボタンのデザイン **********/
+.name-entry-section__enter-player-name-and-decide-event {
+  border: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 340px;
+  margin: 40px auto 0;
+  height: 56px;
+  background: rgb(185, 246, 246);
+  border-radius: 28px;
+  text-align: center;
+  color: rgb(187, 130, 130);
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 56px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: block;
+}
+
+/*********************************
+        name-entry-section validation
+    *********************************/
+
+/******** 入力フォームに入力させない設定 **********/
+.name-entry-section__name-entry-event.--lock {
+  cursor: default;
+  pointer-events: none;
+}
+
+/******** ボタンをクリックさせない設定 **********/
+.name-entry-section__enter-player-name-and-decide-event.--lock {
+  cursor: default;
+  pointer-events: none;
+  background: rgb(201, 233, 233);
+}
+
+/*********************************
+        name-entry-section animation
+    *********************************/
+
+/******** 吹き出しを隠す設定 **********/
+.name-entry-section__bubble.--hide {
+  opacity: 0;
+}
+
+/******** 吹き出しを動かしながらふわっと表示させる設定 **********/
+.name-entry-section__bubble.--fadeIn {
+  animation: name-entry-section__bubble--fadeIn 1s forwards,
+    name-entry-section__bubble--moving 2s infinite;
+}
+
+/******** 吹き出しを動かしながらふわっと非表示にさせる設定 **********/
+.name-entry-section__bubble.--fadeOut {
+  animation: name-entry-section__bubble--fadeOut 1s forwards,
+    name-entry-section__bubble--moving 2s infinite;
+}
+
+@keyframes name-entry-section__bubble--fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes name-entry-section__bubble--fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes name-entry-section__bubble--moving {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-4px, -4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/******** 入力フォームを中央に設定 **********/
+.name-entry-section__name-entry-event.--center {
+  transform: translateX(-50%);
+}
+
+/******** 入力フォームを右端（アニメーション開始位置）に設定 **********/
+.name-entry-section__name-entry-event.--rightSide {
+  transform: translateX(60%);
+}
+
+/******** 入力フォームを左にスライドさせて非表示にする設定 **********/
+.name-entry-section__name-entry-event.--slideOut {
+  animation: name-entry-section__name-entry-event--slideOut 2s forwards;
+}
+
+/******** 入力フォームを左にスライドさせて表示にする設定 **********/
+.name-entry-section__name-entry-event.--slideIn {
+  animation: name-entry-section__name-entry-event--slideIn 2s forwards;
+}
+
+@keyframes name-entry-section__name-entry-event--slideOut {
+  from {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-160%);
+    opacity: 0;
+  }
+}
+
+@keyframes name-entry-section__name-entry-event--slideIn {
+  from {
+    transform: translateX(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+/*********************************
+        name-entry-section event
+    *********************************/
+
+/******** ボタンをクリックしたときのデザイン **********/
+.name-entry-section__enter-player-name-and-decide-event:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+// ==========================================================================
+// component
+// ==========================================================================
+
+// -----------------------------------------------------------------
+// playing-card-game
+// -----------------------------------------------------------------
+
+@import './component/playing-card-game/bubble';
+@import './component/playing-card-game/card';
+@import './component/playing-card-game/label';
+
+// ==========================================================================
+// animation
+// ==========================================================================
+
+// -----------------------------------------------------------------
+// playing-card-game
+// -----------------------------------------------------------------
+
+@import './animation/playing-card-game/bubble';
+@import './animation/playing-card-game/card/slide-in-right';
+@import './animation/playing-card-game/card/turn';
+@import './animation/playing-card-game/label';
+
+
+/*-- --*/
+
+#truth-or-callenge-app {
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  animation: truth-or-callenge__fade-in 1s forwards;
+}
+
+@keyframes truth-or-callenge__fade-in {
+  from {
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+#choice-truth-or-challenge {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.choice-truth-or-callenge-section__message {
+  text-align: center;
+  font-weight: 700;
+}
+
+.choice-truth-or-callenge-section__message--text2 {
+  margin-top: 8px;
+}
+
+.choice-truth-or-callenge-section__message--text1.--hide,
+.choice-truth-or-callenge-section__message--text2.--hide {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.choice-truth-or-callenge-section__message--text1.--fade-in,
+.choice-truth-or-callenge-section__message--text2.--fade-in {
+  animation: fade-in-up 1s forwards;
+}
+
+.choice-truth-or-callenge-section__event-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.choice-truth-or-callenge-section__event-container.--hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.choice-truth-or-callenge-section__event-container.--fade-in {
+  animation: fade-in-up 1s forwards;
+}
+
+#choice-truth-event {
+  width: 120px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  background: rgb(233, 99, 248);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#choice-challenge-event {
+  width: 120px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  background: rgb(28, 236, 236);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* */
+#order-truth-content {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.order-truth-content-first__message {
+  text-align: center;
+  font-weight: bold;
+}
+
+.order-truth-content__select-list {
+  background: #eaeaea;
+  width: 100%;
+  padding: 4px;
+  margin-top: 16px;
+}
+
+.order-truth-content__select-list-title {
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.order-truth-content__select-list-input {
+  border: none;
+  width: 100%;
+}
+
+#decide-truth-event {
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  margin-top: 16px;
+  background: rgb(233, 99, 248);
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* */
+#order-challenge-content {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}

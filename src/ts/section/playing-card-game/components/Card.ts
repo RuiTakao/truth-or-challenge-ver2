@@ -1,17 +1,11 @@
-import { Bubble } from "./Bubble";
-
 export class Card {
-  hostElement: HTMLDivElement;
-  templateElement: HTMLTemplateElement;
-  element: HTMLDivElement;
-  cardList: NodeListOf<HTMLLIElement>;
+  private hostElement: HTMLDivElement;
+  private templateElement: HTMLTemplateElement;
+  private element: HTMLDivElement;
+  private cardList: NodeListOf<HTMLLIElement>;
 
-  get getCardList() {
+  get cardListElement() {
     return this.cardList;
-  }
-
-  get getElement() {
-    return this.element;
   }
 
   constructor() {
@@ -30,29 +24,8 @@ export class Card {
     )! as NodeListOf<HTMLLIElement>;
 
     this.hide();
-    this.lock();
     this.attach();
     this.slideInRight();
-  }
-
-  attach() {
-    this.hostElement.insertAdjacentElement("afterbegin", this.element);
-  }
-
-  slideInRight() {
-    this.cardList.forEach((value) => {
-      value.classList.add("--moving");
-      setTimeout(() => {
-        value.classList.remove("--hide");
-        value.classList.remove("--moving");
-      }, 3500);
-    });
-  }
-
-  hide() {
-    this.cardList.forEach((value) => {
-      value.classList.add("--hide");
-    });
   }
 
   lock() {
@@ -67,17 +40,8 @@ export class Card {
     });
   }
 
-  click(bubble: Bubble) {
-    this.cardList.forEach((value) => {
-      value.addEventListener("click", () => {
-        bubble.openEventButton();
-        this.removeSelectClass();
-        this.addSelectClass(value);
-      });
-    });
-  }
-
   addSelectClass(value: HTMLLIElement) {
+    this.removeSelectClass();
     value.classList.add("--selected");
   }
 
@@ -106,15 +70,6 @@ export class Card {
     });
   }
 
-  private createNumber(): number[] {
-    const numbers: number[] = [];
-    for (let i = 1; i <= this.cardList.length; i++) {
-      numbers.push(i);
-    }
-    numbers.sort(() => 0.5 - Math.random());
-    return numbers;
-  }
-
   addNumber() {
     const numbers: number[] = this.createNumber();
     this.cardList.forEach((value, index) => {
@@ -134,5 +89,34 @@ export class Card {
     setTimeout(() => {
       secondUserDecidedCard.classList.add("--turn");
     }, 500);
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement("afterbegin", this.element);
+  }
+
+  private slideInRight() {
+    this.cardList.forEach((value) => {
+      value.classList.add("--moving");
+      setTimeout(() => {
+        value.classList.remove("--hide");
+        value.classList.remove("--moving");
+      }, 3500);
+    });
+  }
+
+  private hide() {
+    this.cardList.forEach((value) => {
+      value.classList.add("--hide");
+    });
+  }
+
+  private createNumber(): number[] {
+    const numbers: number[] = [];
+    for (let i = 1; i <= this.cardList.length; i++) {
+      numbers.push(i);
+    }
+    numbers.sort(() => 0.5 - Math.random());
+    return numbers;
   }
 }

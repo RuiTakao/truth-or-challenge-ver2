@@ -1,0 +1,89 @@
+#opening-message-label {
+  &.--hide {
+    opacity: 0;
+  }
+
+  &.--fadeIn {
+    animation: opening-message-label--fadeIn 0.5s forwards;
+  }
+
+  &.--fadeOut {
+    animation: opening-message-label--fadeOut 0.5s forwards;
+  }
+}
+
+.opening-message-label-text--first {
+  &.--hide {
+    opacity: 0;
+  }
+
+  &.--rightSide {
+    left: 80%;
+  }
+
+  &.--slideIn {
+    animation: opening-message-label-text--slideIn 1s forwards;
+  }
+
+  &.--slideOut {
+    animation: opening-message-label-text--slideOut 1s forwards;
+  }
+}
+
+.opening-message-label-text--second {
+  &.--hide {
+    opacity: 0;
+  }
+
+  &.--rightSide {
+    left: 80%;
+  }
+
+  &.--slideIn {
+    animation: opening-message-label-text--slideIn 1s forwards;
+  }
+
+  &.--slideOut {
+    animation: opening-message-label-text--slideOut 1s forwards;
+  }
+}
+
+@keyframes opening-message-label--fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opening-message-label--fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes opening-message-label-text--slideIn {
+  from {
+    opacity: 0;
+    left: 80%;
+  }
+  to {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+@keyframes opening-message-label-text--slideOut {
+  from {
+    opacity: 1;
+    left: 50%;
+  }
+  to {
+    opacity: 0;
+    left: 20%;
+  }
+}

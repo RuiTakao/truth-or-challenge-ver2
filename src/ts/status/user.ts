@@ -1,7 +1,4 @@
-export interface User {
-  name: string;
-  decideCard: string;
-}
+import { User } from "../interface/User";
 
 export const nameEntrySectionUserStatus: { firstUser: User; secondUser: User } =
   {
@@ -15,7 +12,7 @@ export const nameEntrySectionUserStatus: { firstUser: User; secondUser: User } =
     },
   };
 
-export const playingCardGameSectionUserStatus: {
+export const users: {
   firstUser: User;
   secondUser: User;
 } = {
@@ -42,3 +39,13 @@ export const choiceTruthOrChallengeSectionUserStatus: {
     decideCard: "",
   },
 };
+
+const winUser: User = {
+  name: "",
+  decideCard: ""
+}
+
+const loseUser: User = {
+  name: "",
+  decideCard: ""
+}
