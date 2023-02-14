@@ -1,0 +1,165 @@
+.playing-card-game__card-list {
+  position: absolute;
+  max-width: 360px;
+  width: 100%;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.playing-card-game__card {
+  width: calc(100% / 4 - 12px);
+  aspect-ratio: 3 / 4;
+  background: orange;
+  margin: 6px;
+  list-style: none;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+
+  &:last-child {
+    margin-left: auto;
+  }
+
+  .num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    opacity: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #808080;
+    overflow-x: hidden;
+  }
+
+  &.--hide {
+    opacity: 0;
+  }
+
+  &.--lock {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.--selected {
+    background: blue;
+    transform: scale(1.1);
+    pointer-events: none;
+  }
+
+  &.--decided {
+    position: relative;
+    background: #808080;
+    pointer-events: none;
+
+    .check-mark {
+      position: absolute;
+      width: 32px;
+      height: 54px;
+      background: transparent;
+      border-right: 12px solid orange;
+      border-bottom: 12px solid orange;
+      top: 36%;
+      left: 53%;
+      transform: translate(-50%, -50%) rotateY(0) rotateZ(40deg);
+    }
+
+    .name {
+      &__front-side {
+        font-weight: bold;
+        color: orange;
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+        text-align: center;
+      }
+
+      &__back-side {
+        font-weight: bold;
+        color: #808080;
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  &.--turn {
+    animation: playing-card-game__card__turn 0.5s forwards;
+
+    .check-mark {
+      animation: playing-card-game__card__check__close 0.25s forwards;
+    }
+
+    .num {
+      animation: playing-card-game__card__num__open 0.5s forwards;
+    }
+
+    .name {
+      &__front-side {
+        animation: playing-card-game__card__name__front-side__close 0.5s
+          forwards;
+      }
+
+      &__back-side {
+        animation: playing-card-game__card__name__back-side__open 0.5s forwards;
+      }
+    }
+  }
+}
+
+@keyframes playing-card-game__card__turn {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(180deg);
+    background: #fff;
+    box-shadow: -5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes playing-card-game__card__name__front-side__close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes playing-card-game__card__name__back-side__open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes playing-card-game__card__check__close {
+  from {
+    transform: translate(-50%, -50%) rotateY(0) rotateZ(40deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(40deg);
+  }
+}
+
+@keyframes playing-card-game__card__num__open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

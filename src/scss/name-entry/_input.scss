@@ -1,0 +1,57 @@
+.name-entry__input {
+  position: absolute;
+  top: 41.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 56px;
+  font-size: 24px;
+  background: #fff;
+  border: 2px solid rgb(185, 246, 246);
+  border-radius: 8px;
+  padding-left: 4px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+
+  &.--hide {
+    opacity: 0;
+  }
+
+  &.--lock {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.--right-side {
+    transform: translateX(60%);
+  }
+
+  &.--slide-out-left {
+    animation: name-entry__input__slide-out-left 2s forwards;
+  }
+
+  &.--slide-in-left {
+    animation: name-entry__input__slide-in-left 2s forwards;
+  }
+}
+
+@keyframes name-entry__input__slide-out-left {
+  from {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-160%);
+    opacity: 0;
+  }
+}
+
+@keyframes name-entry__input__slide-in-left {
+  from {
+    transform: translateX(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}

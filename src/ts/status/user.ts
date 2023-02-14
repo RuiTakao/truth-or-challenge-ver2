@@ -1,51 +1,33 @@
 import { User } from "../interface/User";
 
-export const nameEntrySectionUserStatus: { firstUser: User; secondUser: User } =
-  {
-    firstUser: {
-      name: "",
-      decideCard: "",
-    },
-    secondUser: {
-      name: "",
-      decideCard: "",
-    },
-  };
-
-export const users: {
+export const userStatus: {
   firstUser: User;
   secondUser: User;
 } = {
   firstUser: {
     name: "takao",
     decideCard: "",
+    selectNumber: 0,
   },
   secondUser: {
     name: "kennya",
     decideCard: "",
+    selectNumber: 0,
   },
 };
 
-export const choiceTruthOrChallengeSectionUserStatus: {
-  winner: User;
-  loser: User;
+export const winLoseStatus: {
+  winUser: User;
+  loseUser: User;
 } = {
-  winner: {
+  winUser: {
     name: "",
     decideCard: "",
+    selectNumber: 0,
   },
-  loser: {
+  loseUser: {
     name: "",
     decideCard: "",
+    selectNumber: 0,
   },
 };
-
-const winUser: User = {
-  name: "",
-  decideCard: ""
-}
-
-const loseUser: User = {
-  name: "",
-  decideCard: ""
-}

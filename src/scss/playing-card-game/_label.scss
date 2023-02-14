@@ -1,0 +1,95 @@
+.playing-card-game__label {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  height: 100px;
+  top: 360px;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  opacity: 0;
+
+  &.--fade-in {
+    animation: playing-card-game__label__fade-in 0.5s forwards;
+  }
+
+  &.--fade-out {
+    animation: playing-card-game__label__fade-out 0.5s forwards;
+  }
+
+  &__first-message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    transform: translateX(-50%);
+    left: 100%;
+    opacity: 0;
+
+    &.--slide-in-left {
+      animation: playing-card-game__label__slide-in-left 1s forwards;
+    }
+
+    &.--slide-out-left {
+      animation: playing-card-game__label__slide-out-left 1s forwards;
+    }
+  }
+
+  &__second-message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+    transform: translateX(-50%);
+    left: 80%;
+    opacity: 0;
+
+    &.--slide-in-left {
+      animation: playing-card-game__label__slide-in-left 1s forwards;
+    }
+
+    &.--slide-out-left {
+      animation: playing-card-game__label__slide-out-left 1s forwards;
+    }
+  }
+}
+
+@keyframes playing-card-game__label__fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes playing-card-game__label__fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes playing-card-game__label__slide-in-left {
+  from {
+    opacity: 0;
+    left: 100%;
+  }
+  to {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+@keyframes playing-card-game__label__slide-out-left {
+  from {
+    opacity: 1;
+    left: 50%;
+  }
+  to {
+    opacity: 0;
+    left: 0;
+  }
+}

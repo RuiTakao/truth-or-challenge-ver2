@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/app.ts',
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, 'dist/assets'),
+        path: path.resolve(__dirname, 'dist'),
     },
     devtool: 'inline-source-map',
     module: {
@@ -17,7 +17,7 @@ module.exports = {
             },
             {
                 test: /\.(scss|sass|css)$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader']
             }
         ],
     },
