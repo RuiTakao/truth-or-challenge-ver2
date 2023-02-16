@@ -81,14 +81,7 @@
       }
 
       &__back-side {
-        font-weight: bold;
-        color: #808080;
-        position: absolute;
-        bottom: 6px;
-        width: 100%;
-        text-align: center;
         opacity: 0;
-        transform: rotateY(180deg);
       }
     }
   }
@@ -106,11 +99,17 @@
 
     .name {
       &__front-side {
-        animation: playing-card-game__card__name__front-side__close 0.5s
-          forwards;
+        animation: playing-card-game__card__name__front-side__close 0.5s forwards;
       }
 
       &__back-side {
+        font-weight: bold;
+        color: #808080;
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+        text-align: center;
+        transform: rotateY(180deg);
         animation: playing-card-game__card__name__back-side__open 0.5s forwards;
       }
     }
