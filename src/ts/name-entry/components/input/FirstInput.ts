@@ -11,6 +11,7 @@ export class FirstInput {
     this.element = this.hostElement.appendChild(
       this.createElement()
     ) as HTMLInputElement;
+    this.element.focus();
   }
 
   lock() {
@@ -20,20 +21,19 @@ export class FirstInput {
   slideOutLeft() {
     this.element.classList.add('--slide-out-left');
     setTimeout(() => {
-      this.destroy();
+      this.hostElement.removeChild(this.element);
     }, 1500);
-  }
-
-  private destroy() {
-    this.hostElement.removeChild(this.element);
   }
 
   private createElement(): HTMLInputElement {
     const sectionName = "name-entry";
-    const nameInput = document.createElement("input");
-    nameInput.className = `${sectionName}__input`;
-    nameInput.type = "text";
-    nameInput.maxLength = 5;
-    return nameInput;
+
+    // input
+    const element = document.createElement("input");
+    element.className = `${sectionName}__input`;
+    element.type = "text";
+    element.maxLength = 5;
+
+    return element;
   }
 }

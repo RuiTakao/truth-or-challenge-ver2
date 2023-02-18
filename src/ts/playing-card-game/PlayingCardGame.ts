@@ -1,12 +1,11 @@
 import { userStatus } from "../status/user";
-import { User } from "../interface/User";
 import { UserShuffle } from "./modules/UserShuffle";
 import { Bubble } from "./components/Bubble";
 import { Card } from "./components/Card";
 import { Label } from "./components/Label";
-import { CardElement } from "./eventListeners/CardElement";
-import { NoButtonElement } from "./eventListeners/NoButtonElement";
-import { YesButtonElement } from "./eventListeners/YesButtonElement";
+import { CardElement } from "./event-listeners/CardElement";
+import { NoButtonElement } from "./event-listeners/NoButtonElement";
+import { YesButtonElement } from "./event-listeners/YesButtonElement";
 
 export class PlayingCardGame {
   constructor() {

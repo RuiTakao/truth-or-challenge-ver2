@@ -1,4 +1,5 @@
 import { userStatus } from "../../status/user";
+import { LoserChiceTruthOrDare } from "../../truth-or-dare/loser-choice-truth-or-dare/LoserChoiceTruthOrDare";
 import { Bubble } from "../components/Bubble";
 import { Card } from "../components/Card";
 import { Label } from "../components/Label";
@@ -64,6 +65,10 @@ export class YesButtonElement {
 
         // 勝敗判定
         new Judge();
+
+        setTimeout(() => {
+          new LoserChiceTruthOrDare();
+        }, 750);
       },
       { once: true }
     );

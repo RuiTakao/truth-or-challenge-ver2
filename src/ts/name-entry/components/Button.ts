@@ -11,17 +11,30 @@ export class Button {
     this.element = this.hostElement.appendChild(
       this.createElement()
     )! as HTMLButtonElement;
+
+    this.lock();
+  }
+
+  lock() {
+    this.element.classList.add('--lock');
+  }
+
+  unlock() {
+    this.element.classList.remove('--lock');
   }
 
   destroy() {
     this.hostElement.removeChild(this.element);
   }
 
-  createElement(): HTMLButtonElement {
+  private createElement(): HTMLButtonElement {
     const sectionName = "name-entry";
-    const setButton = document.createElement("button");
-    setButton.className = `${sectionName}__button`;
-    setButton.innerText = "クリック";
-    return setButton;
+
+    // button
+    const element = document.createElement("button");
+    element.className = `${sectionName}__button`;
+    element.innerText = "クリック";
+
+    return element;
   }
 }

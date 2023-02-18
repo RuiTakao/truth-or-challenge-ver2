@@ -1,0 +1,111 @@
+.loser-choice-truth-or-dare {
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  width: 258px;
+  transform: translateX(-50%);
+
+  &__loser-name {
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: choice-truth-or-dare__fade-in-up 2s forwards;
+    font-size: 22px;
+
+    &::after {
+      content: "さん";
+      font-size: 16px;
+    }
+  }
+
+  &__message {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    span:not(:first-child) {
+      margin-left: 4px;
+    }
+
+    &__truth {
+      font-size: 20px;
+      color: rgb(233, 99, 248);
+      opacity: 0;
+      animation: choice-truth-or-dare__fade-in 2s 1s forwards;
+    }
+
+    &__second {
+      opacity: 0;
+      animation: choice-truth-or-dare__fade-in 2s 1s forwards;
+    }
+
+    &__dare {
+      font-size: 20px;
+      color: rgb(28, 236, 236);
+      opacity: 0;
+      animation: choice-truth-or-dare__fade-in 2s 2s forwards;
+    }
+
+    &__fourth {
+      opacity: 0;
+      animation: choice-truth-or-dare__fade-in 2s 2s forwards;
+    }
+
+    &__fifth {
+      opacity: 0;
+      transform: translateY(8px);
+      display: inline-block;
+      animation: choice-truth-or-dare__fade-in-up 2s 3s forwards;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    opacity: 0;
+    animation: choice-truth-or-dare__fade-in 2s 4s forwards;
+
+    @mixin button($color) {
+      width: 120px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 4;
+      background: $color;
+    }
+
+    &__truth-button {
+      @include button(rgb(233, 99, 248));
+    }
+
+    &__dare-button {
+      @include button(rgb(28, 236, 236));
+    }
+  }
+}
+
+@keyframes choice-truth-or-dare__fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes choice-truth-or-dare__fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

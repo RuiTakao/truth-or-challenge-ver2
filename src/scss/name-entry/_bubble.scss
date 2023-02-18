@@ -5,6 +5,8 @@
   left: 50%;
   transform: translateX(-50%);
   top: 25%;
+  opacity: 0;
+  animation: name-entry__bubble__fade-in 1s forwards, name-entry__bubble__moving 2s infinite;
 
   &__body {
     position: absolute;
@@ -60,13 +62,6 @@
     }
   }
 
-  &.--hide {
-    opacity: 0;
-  }
-
-  &.--fade-in {
-    animation: name-entry__bubble__fade-in 1s forwards, name-entry__bubble__moving 2s infinite;
-  }
   &.--fade-out {
     animation: name-entry__bubble__fade-out 1s forwards, name-entry__bubble__moving 2s infinite;
   }

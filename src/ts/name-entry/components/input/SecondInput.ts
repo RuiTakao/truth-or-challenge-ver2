@@ -21,23 +21,23 @@ export class SecondInput {
   private slideInLeft() {
     this.element.classList.add("--slide-in-left");
     setTimeout(() => {
-      this.unLock();
+      this.element.classList.remove("--lock");
+      this.element.focus();
     }, 1500);
-  }
-
-  private unLock() {
-    this.element.classList.remove("--lock");
   }
 
   private createElement(): HTMLInputElement {
     const sectionName = "name-entry";
-    const nameInput = document.createElement("input");
-    nameInput.className = `${sectionName}__input`;
-    nameInput.type = "text";
-    nameInput.maxLength = 5;
-    nameInput.classList.add("--hide");
-    nameInput.classList.add("--lock");
-    nameInput.classList.add("--right-side");
-    return nameInput;
+
+    // input
+    const element = document.createElement("input");
+    element.className = `${sectionName}__input`;
+    element.type = "text";
+    element.maxLength = 5;
+    element.classList.add("--hide");
+    element.classList.add("--lock");
+    element.classList.add("--right-side");
+
+    return element;
   }
 }
