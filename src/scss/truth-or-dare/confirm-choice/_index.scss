@@ -1,0 +1,57 @@
+@use "../animation";
+
+.confirm-choice {
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  width: 258px;
+  transform: translateX(-50%);
+
+  &.fade-out {
+    @include animation.fade-out;
+  }
+
+  &__message {
+    &__first-line {
+      text-align: center;
+      font-weight: bold;
+      @include animation.fade-in-up(2s, 0, "large");
+
+      &__name {
+        font-size: 22px;
+      }
+    }
+
+    &__second-line {
+      margin-top: 8px;
+      text-align: center;
+      font-weight: bold;
+
+      &__name {
+        font-size: 20px;
+        @include animation.fade-in(1s, 1.5s);
+      }
+      &__second {
+        @include animation.fade-in(1s, 1.5s);
+      }
+      &__third {
+        margin-left: 2px;
+        @include animation.fade-in(2s, 2s);
+      }
+      &__fourth {
+        margin-left: 2px;
+        display: inline-block;
+        @include animation.fade-in-up(1.5s, 3s, "small");
+      }
+    }
+  }
+
+  &__button {
+    background: #afeeee;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 16px;
+    @include animation.fade-in(2s, 4s);
+  }
+}

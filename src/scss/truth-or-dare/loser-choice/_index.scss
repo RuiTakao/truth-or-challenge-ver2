@@ -1,0 +1,89 @@
+@use "../animation";
+
+@mixin button($color) {
+  width: 120px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 4;
+  background: $color;
+}
+
+.loser-choice {
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  width: 258px;
+  transform: translateX(-50%);
+
+  &.fade-out {
+    @include animation.fade-out;
+  }
+
+  &__message {
+    &__first-line {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      @include animation.fade-in-up(1.5s, 0, "large");
+
+      &__name {
+        font-size: 22px;
+      }
+    }
+
+    &__second-line {
+      text-align: center;
+      margin-top: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 1px;
+
+      span:not(:first-child) {
+        margin-left: 4px;
+      }
+
+      &__truth {
+        font-size: 20px;
+        color: rgb(233, 99, 248);
+        @include animation.fade-in(2s, 1s);
+      }
+
+      &__second {
+        @include animation.fade-in(2s, 1s);
+      }
+
+      &__dare {
+        font-size: 20px;
+        color: rgb(28, 236, 236);
+        @include animation.fade-in(2s, 2s);
+      }
+
+      &__fourth {
+        @include animation.fade-in(2s, 2s);
+      }
+
+      &__fifth {
+        display: inline-block;
+        @include animation.fade-in-up(1s, 3s, "small");
+      }
+    }
+  }
+
+  &__button-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    @include animation.fade-in(2s, 4s);
+  }
+
+  &__truth-button {
+    @include button(rgb(233, 99, 248));
+  }
+
+  &__dare-button {
+    @include button(rgb(28, 236, 236));
+  }
+}

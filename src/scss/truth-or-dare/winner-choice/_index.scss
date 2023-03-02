@@ -1,0 +1,126 @@
+@use "../animation";
+
+.winner-choice {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 360px;
+
+  &.fade-out {
+    @include animation.fade-out;
+  }
+
+  &__message {
+    &__first-line {
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      &__truth {
+        margin-right: 4px;
+        font-size: 20px;
+        color: rgb(233, 99, 248);
+        @include animation.fade-in(2s, 0);
+      }
+      &__second {
+        @include animation.fade-in(2s, 0);
+      }
+      &__third {
+        display: inline-block;
+        margin-left: 2px;
+        @include animation.fade-in-up(1s, 1s, "small");
+      }
+    }
+
+    &__second-line {
+      margin-top: 8px;
+      font-weight: bold;
+      text-align: center;
+      @include animation.fade-in-up(1.5s, 2s, "large");
+
+      &__name {
+        font-size: 22px;
+      }
+    }
+
+    &__third-line {
+      margin-top: 8px;
+      text-align: center;
+      font-weight: bold;
+
+      &__name {
+        font-size: 20px;
+        @include animation.fade-in(1s, 3s);
+      }
+      &__second {
+        @include animation.fade-in(1s, 3s);
+      }
+      &__third {
+        margin-left: 2px;
+        @include animation.fade-in(1s, 3s);
+      }
+      &__fourth {
+        margin-left: 2px;
+        @include animation.fade-in(1s, 4s);
+      }
+      &__truth {
+        margin-left: 4px;
+        font-size: 20px;
+        color: rgb(233, 99, 248);
+        @include animation.fade-in(1s, 5s);
+      }
+      &__sixth {
+        margin-left: 4px;
+        @include animation.fade-in(1s, 5s);
+      }
+      &__seventh {
+        display: inline-block;
+        margin-left: 2px;
+        @include animation.fade-in-up(1s, 6s, "small");
+      }
+    }
+  }
+  &__select-box {
+    margin-top: 8px;
+    width: 100%;
+    background: #afeeee;
+    padding: 8px;
+    border-radius: 8px;
+    @include animation.fade-in(1.5s, 7s);
+
+    &__title {
+      text-align: center;
+      font-weight: bold;
+      padding: 4px;
+      color: #b22222;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+
+    &__select {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      outline: none;
+      border: 2px solid #888;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &__option {
+      border-bottom: 1px solid #888;
+      font-size: 16px;
+      padding: 8px 8px;
+    }
+  }
+
+  &__button {
+    background: #afeeee;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 16px;
+    @include animation.fade-in(1.5s, 7s);
+  }
+}

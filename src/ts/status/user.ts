@@ -5,12 +5,12 @@ export const userStatus: {
   secondUser: User;
 } = {
   firstUser: {
-    name: "takao",
+    name: "",
     decideCard: "",
     selectNumber: 0,
   },
   secondUser: {
-    name: "kennya",
+    name: "",
     decideCard: "",
     selectNumber: 0,
   },

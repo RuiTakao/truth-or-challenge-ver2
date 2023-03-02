@@ -1,5 +1,5 @@
 import { userStatus } from "../../status/user";
-import { LoserChiceTruthOrDare } from "../../truth-or-dare/loser-choice-truth-or-dare/LoserChoiceTruthOrDare";
+import { TruthOrDare } from "../../truth-or-dare/TruthOrDare";
 import { Bubble } from "../components/Bubble";
 import { Card } from "../components/Card";
 import { Label } from "../components/Label";
@@ -67,7 +67,7 @@ export class YesButtonElement {
         new Judge();
 
         setTimeout(() => {
-          new LoserChiceTruthOrDare();
+          new TruthOrDare();
         }, 750);
       },
       { once: true }

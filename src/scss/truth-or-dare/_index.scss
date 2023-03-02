@@ -1,2 +1,5 @@
-@use 'loser-choice-truth-or-dare';
-@use 'winner-choice-truth-or-dare';
+@use "./foundation";
+@use "./loser-choice";
+@use "./winner-choice";
+@use "./confirm-choice";
+@use './loser-answer';
